@@ -1,0 +1,11 @@
+# Виртуальные окружения
+venv/
+.venv/
+ENV/
+env/
+.ENV/
+
+# Кеши Python
+__pycache__/
+*.py[cod]
+*$py.class

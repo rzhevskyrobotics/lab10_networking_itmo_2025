@@ -1,0 +1,179 @@
+body {
+	font: 16px/1.4 system-ui, sans-serif;
+	margin: 2rem auto; 
+	max-width: 820px;
+}
+
+h1 {
+	margin-bottom: .5rem;
+}
+
+section {
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	padding: 1rem;
+	margin: 1rem 0;
+}
+
+.row {
+	display: flex;
+	gap: .5rem;
+	margin: .5rem 0;
+}
+
+input, button, textarea {
+	padding: .5rem .7rem; 
+}
+
+ul {
+	padding-left: 1.2rem;
+}
+
+.muted {
+	color:#777;
+	font-style: italic;
+}
+
+.input-invalid {
+	outline: 2px solid #e53935;
+	outline-offset: 2px;
+}
+
+#toasts {
+	position: fixed;
+	right: 16px;
+	bottom: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	z-index: 9999;
+}
+
+.toast {
+	min-width: 280px;
+	max-width: 420px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	background: #fff;
+	color:#111;
+	border-left: 4px solid #1565c0;
+	box-shadow: 0 4px 18px rgba(0,0,0,.15);
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 6px 10px;
+	align-items: center;
+	animation: slideIn .18s ease-out;
+}
+
+.toast--success {
+	border-left-color:#2e7d32;
+	background:#e8f5e9;
+}
+
+.toast--error {
+	border-left-color:#e53935;
+	background:#ffeaea;
+}
+
+.toast--warn {
+	border-left-color:#f9a825;
+	background:#fff8e1;
+}
+
+.toast--info {
+	border-left-color:#1565c0;
+	background:#e3f2fd;
+}
+
+.toast__msg {
+	font-size: .95rem;
+}
+
+.toast__close {
+	border:0;
+	background:transparent;
+	font-size:1rem;
+	opacity:.6;
+	cursor:pointer;
+}
+
+.toast__close:hover {
+	opacity:1;
+}
+
+@keyframes slideIn {
+  from {
+	transform: translateY(8px);
+	opacity:0;
+  }
+  to {
+	transform: translateY(0);
+	opacity:1;
+  }
+}
+
+.item { 
+	display:flex;
+	align-items:center;
+	gap:.5rem;
+	flex-wrap:wrap;
+	padding:.25rem 0;
+}
+
+.item .text {
+	flex:1 1 auto;
+}
+
+.item .actions button {
+	margin-left:.4rem;
+}
+
+.item.editing .text {
+	display:none;
+}
+
+.item.editing .editor {
+	display:flex;
+	gap:.4rem;
+	flex-wrap:wrap;
+	width:100%;
+}
+
+.item input[type="text"] {
+	padding:.4rem .6rem;
+	min-width: 240px;
+}
+
+.item .hint {
+	font-size:.85rem;
+	color:#666;
+}
+
+.item .spacer {
+	flex: 1 1 auto;
+}
+
+table { 
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td { 
+	border: 1px solid #ddd;
+	padding: .4rem .6rem;
+	font-size: .95rem;
+}
+
+thead th { 
+	background: #f5f5f5;
+	text-align: left;
+}
+
+.input-invalid { 
+	outline: 2px solid #e53935;
+	outline-offset: 2px;
+}
+
+#ripeChart { 
+	margin-top: 12px;
+}

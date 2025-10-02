@@ -1,0 +1,62 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Async Progress + REST Demo</title>
+<link rel="stylesheet" href="/css/style.css">
+
+<h1>Демонстрация: прогресс + REST + SQLite</h1>
+
+<section>
+  <h2>RIPE NCC: выделение номеров AS российским LIR</h2>
+  <div class="row">
+    <button id="ripeLoad">Скачать и построить график</button>
+    <button id="ripeForce">Перескачать файл на сервере</button>
+  </div>
+  <progress id="ripeBar" value="0" max="100" style="width:100%; height:14px;"></progress>
+  <div id="ripeInfo" class="muted">Файл ещё не загружен.</div>
+  <canvas id="ripeChart" height="160"></canvas>
+</section>
+
+<section>
+  <h2>Ping токеном → записать в БД и привязать ASN</h2>
+  <div class="row">
+    <input id="tokenInput" placeholder="Введите токен (любой текст)">
+    <button id="tokenRnd">Случайный</button>
+    <button id="tokenSend">Отправить</button>
+  </div>
+</section>
+
+<section>
+  <h2>Статистика по ASN (по токен-пингам)</h2>
+  <div class="row">
+    <button id="loadPingStats">Показать статистику</button>
+    <button id="clearPingStats">Очистить статистику</button>
+  </div>
+  <div id="pingSummary" class="muted">—</div>
+
+  <h3>ТОП-ASN</h3>
+  <ul id="pingTop"></ul>
+
+  <h3>Последние пинги</h3>
+  <table id="pingTable">
+    <thead>
+      <tr><th>Время</th><th>Token</th><th>IP</th><th>ASN</th><th>AS Name</th><th>Prefix</th><th>User-Agent</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section>
+  <h2>REST API (CRUD по items)</h2>
+  <div class="row">
+    <input id="title" placeholder="Название">
+    <input id="desc" placeholder="Описание (опционально)">
+    <button id="add">Добавить</button>
+  </div>
+  <button id="reload">Обновить/получить список</button>
+  <ul id="list"></ul>
+</section>
+
+<div id="toasts" aria-live="polite" aria-atomic="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="/js/app.js"></script>
